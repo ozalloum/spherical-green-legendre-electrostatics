@@ -1,0 +1,18 @@
+{
+  "project": "spherical-green-legendre-electrostatics",
+  "manuscript_title": "A Reproducible Computational Framework for Green-Function and Legendre-Series Solutions in Spherical Electrostatics",
+  "author": "Othman H. Y. Zalloum",
+  "repository": "https://github.com/ozalloum/spherical-green-legendre-electrostatics",
+  "dimensionless_units": {
+    "sphere_radius_a": 1,
+    "charge_q": 1,
+    "coulomb_prefactor_1_over_4pi_epsilon0": 1
+  },
+  "source_positions_b_over_a": [0.25, 0.45, 0.65, 0.80],
+  "truncation_orders_L": [2, 4, 8, 16, 32, 64],
+  "surface_charge_orders_L": [4, 8, 16, 32],
+  "notes": [
+    "The repository contains manuscript figures, CSV datasets, a reproduction notebook, source modules, and validation tests.",
+    "A persistent archive DOI may be added after repository archiving."
+  ]
+}
