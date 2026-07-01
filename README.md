@@ -1,4 +1,5 @@
 # Spherical Green-Legendre Electrostatics
+![Reproducibility Check](https://github.com/ozalloum/spherical-green-legendre-electrostatics/actions/workflows/reproducibility-check.yml/badge.svg)
 
 Reproducible Green-function and Legendre-series electrostatic solver for a point charge inside a grounded conducting sphere.
 
