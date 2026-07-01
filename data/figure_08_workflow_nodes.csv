@@ -1,0 +1,11 @@
+node_id,label,stage,x,y
+input,Input parameters,Input,0.5,1.00
+exact,Exact image-charge solution,Computation,0.5,0.84
+legendre,Finite Legendre-series solution,Computation,0.5,0.68
+field,Potential evaluation,Computation,0.5,0.52
+surface,Surface charge,Diagnostic,0.20,0.34
+energy,Image energy,Diagnostic,0.40,0.34
+force,Signed radial force,Diagnostic,0.60,0.34
+coeff,Multipole coefficients,Diagnostic,0.80,0.34
+error,Error metrics and validation,Validation,0.5,0.16
+outputs,CSV data and figures,Output,0.5,0.00

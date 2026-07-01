@@ -1,0 +1,16 @@
+source,target
+root,src
+root,data
+root,figures
+root,scripts
+root,tests
+root,metadata
+src,solver
+data,csv
+figures,pdfpng
+scripts,plotter
+tests,unit
+metadata,runsummary
+root,readme
+root,requirements
+root,license

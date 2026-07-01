@@ -1,0 +1,12 @@
+figure,file_name,description,plot_type,primary_columns
+1,figure_01_data.csv,Exact image-charge potential in the x-z meridional plane,heatmap/contour,"x_over_a,z_over_a,phi_clipped"
+2,figure_02_data.csv,Exact and finite Legendre line profiles,line,"r_over_a,exact,L_2,L_4,L_8,L_16,L_32"
+3,figure_03_data.csv,Relative L2 error versus maximum multipole degree,line/log-y,"b_over_a,L,relative_L2_error"
+4,figure_04_data.csv,Exact and truncated induced surface charge,line,"theta_over_pi,exact,L_4,L_8,L_16,L_32"
+5,figure_05_data.csv,Exact surface charge for several source positions,line,"theta_over_pi,sigma_b_0p25,sigma_b_0p45,sigma_b_0p65,sigma_b_0p8"
+6,figure_06_data.csv,Image energy and signed radial force,line,"b_over_a,image_energy_U,signed_radial_force_F"
+7,figure_07_data.csv,Multipole coefficient decay,line/log-y,"ell,coefficient_abs_b_0p25,coefficient_abs_b_0p45,coefficient_abs_b_0p65,coefficient_abs_b_0p8"
+8,figure_08_workflow_nodes.csv;figure_08_workflow_edges.csv,Computational workflow diagram,node-edge diagram,"node_id,label,stage,x,y;source,target"
+9,figure_09_computational_cost.csv,Computational cost versus multipole degree,line,"L,runtime_seconds_median,estimated_memory_MB"
+10,figure_10_error_heatmap.csv,Absolute error heat map,heatmap,"x_over_a,z_over_a,absolute_error"
+11,figure_11_repository_nodes.csv;figure_11_repository_edges.csv,Repository and reproducibility structure,node-edge diagram,"node_id,label,type,x,y;source,target"
