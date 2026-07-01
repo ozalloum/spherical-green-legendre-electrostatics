@@ -1,7 +1,7 @@
 # Reproducibility check report
 
 Repository: spherical-green-legendre-electrostatics  
-Repository URL: https://github.com/ozalloum/spherical-green-legendre-electrostatics  
+Repository URL: https://github.com/ozalloum/spherical-green-legendre-electrostatics
 
 ## Test date
 
@@ -16,7 +16,7 @@ Repository URL: https://github.com/ozalloum/spherical-green-legendre-electrostat
 GitHub Actions workflow: Reproducibility Check  
 Workflow run: Reproducibility Check #3  
 Status: Passed  
-Runtime: 1 min 32 sec  
+Runtime: 1 min 32 sec
 
 ## Environment
 
