@@ -1,0 +1,95 @@
+name: Reproducibility Check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test-repository:
+    runs-on: ubuntu-latest
+
+    env:
+      MPLBACKEND: Agg
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install nbconvert ipykernel
+
+      - name: Check required repository files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          required = [
+              "README.md",
+              "requirements.txt",
+              "environment.yml",
+              "src",
+              "tests",
+              "data",
+              "tables",
+              "figures",
+              "notebooks",
+              "scripts",
+              "metadata",
+              "metadata/run_summary.json",
+              "scripts/generate_all_results_cpc.py",
+          ]
+
+          missing = [p for p in required if not Path(p).exists()]
+
+          if missing:
+              print("Missing required files/folders:")
+              for p in missing:
+                  print(" -", p)
+              raise SystemExit(1)
+
+          print("Repository structure check passed.")
+          PY
+
+      - name: Show repository structure
+        run: |
+          find . -maxdepth 3 -type f | sort
+
+      - name: Run validation tests
+        run: |
+          python -m unittest discover -s tests -v
+
+      - name: Run reproduction helper script
+        run: |
+          python scripts/generate_all_results_cpc.py
+
+      - name: Execute reproduction notebooks
+        run: |
+          mkdir -p output/executed_notebooks
+          if ls notebooks/*.ipynb 1> /dev/null 2>&1; then
+            jupyter nbconvert --to notebook --execute notebooks/*.ipynb \
+              --ExecutePreprocessor.timeout=900 \
+              --output-dir output/executed_notebooks
+          else
+            echo "No notebook found in notebooks/"
+            exit 1
+          fi
+
+      - name: Upload reproducibility artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: reproducibility-check-output
+          path: |
+            output/
+            data/
+            tables/
+            figures/
+            metadata/
