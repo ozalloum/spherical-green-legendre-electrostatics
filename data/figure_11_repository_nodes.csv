@@ -1,17 +1,10 @@
 node_id,label,type,x,y
-root,project root,folder,0.50,1.00
-src,src/,folder,0.12,0.74
-data,data/,folder,0.28,0.74
-figures,figures/,folder,0.44,0.74
-scripts,scripts/,folder,0.60,0.74
-tests,tests/,folder,0.76,0.74
-metadata,metadata/,folder,0.92,0.74
-solver,solver.py,file,0.12,0.50
-csv,figure CSV files,file,0.28,0.50
-pdfpng,PDF and PNG figures,file,0.44,0.50
-plotter,plot_all_figures_from_csv.py,file,0.60,0.50
-unit,unit tests,file,0.76,0.50
-runsummary,run summary,file,0.92,0.50
-readme,README.md,file,0.30,0.24
-requirements,requirements.txt,file,0.50,0.24
-license,LICENSE,file,0.70,0.24
+root,Reproducibility package,folder,0.50,1.00
+notebooks,notebooks/ | Reproduction notebook,folder,0.25,0.75
+figures,figures/ | PDF and PNG figures,folder,0.75,0.75
+data,data/ | Figure CSV data,folder,0.25,0.60
+tables,tables/ | Table CSV data,folder,0.75,0.60
+output,output/ | Archived package,folder,0.25,0.45
+readme,README.md | Usage instructions,file,0.75,0.45
+requirements,requirements.txt | Dependencies,file,0.25,0.30
+scripts,scripts/ | Regeneration scripts,folder,0.75,0.30
